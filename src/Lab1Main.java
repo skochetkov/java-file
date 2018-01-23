@@ -11,11 +11,14 @@ import java.io.FileNotFoundException;
 import java.util.*;
 public class Lab1Main {
 
-
 	public static void main (String [] args) {
+		
+/*		System.out.println("Working Directory = " +
+	              System.getProperty("user.dir"));
 
-		// write the code here to implement the menu as specified in Lab 1
-
+		// Working Directory = C:\Users\esoukhanov\workspace\Lab_1_CST8130
+		 
+		 */
 		Scanner input = new Scanner(System.in);
 		boolean flag = false;
 		Numbers number = null;
@@ -112,9 +115,12 @@ public class Lab1Main {
 						+ "\n" + "Lab2.txt" + "\n" + "Lab2Bad1.txt" + "\n" + 
 						"Lab2Bad3.txt" + "\n" + "Lab2Bad3.txt");
 				
-				File file = new File (input.nextLine());
+				String workingFile = input.nextLine();
+				File file = new File (workingFile);
+				//File file = new File ("Lab2.txt");
 				String output = "";
 				Float[] arrFlt = null;
+				String[] arrStrings = null;
 				
 				try {
 					if (file.exists() && file.isFile())
@@ -128,16 +134,17 @@ public class Lab1Main {
 					}
 
 					//splitting the resulting string based on whitespace
-					String[] arrStrings=output.split("\\s"); 
+					arrStrings = output.split("\\s"); 
+					number = new Numbers(arrStrings.length -1);
 					
-					int arrIndex = 0;
+					//int arrIndex = 0;
 					//converting the array of strings to array of integers
 					for(int i = 0;i < arrStrings.length;i++)
 					{
 						try
 						{
-							arrFlt[arrIndex] = Float.parseFloat(arrStrings[i]);
-							arrIndex++;
+							Numbers.numbersFloat[i] = Float.parseFloat(arrStrings[i]);
+							//arrIndex++;
 						}
 						catch (NumberFormatException nfe)
 						{
