@@ -139,22 +139,31 @@ public class Lab1Main {
 					
 					//int arrIndex = 0;
 					//converting the array of strings to array of integers
+					
+					//My code
+					Float [] someArr = number.getNumbersFloat();
+					
+					if(someArr.length != arrStrings.length) {
+						//Error
+						break;
+					}
+					
 					for(int i = 0;i < arrStrings.length;i++)
 					{
 						try
 						{
-							Numbers.numbersFloat[i] = Float.parseFloat(arrStrings[i]);
+							someArr[i] = Float.parseFloat(arrStrings[i]);
 							//arrIndex++;
 						}
 						catch (NumberFormatException nfe)
 						{
-							System.out.println("\n" + "Invalid data in file – did not process");
+							System.out.println("\n" + "Invalid data in file â€“ did not process");
 						}
 					}					
 
 
 					if(arrFlt[0] < 1){
-						System.out.println("\n" + "Invalid data in file – did not process");
+						System.out.println("\n" + "Invalid data in file â€“ did not process");
 
 					}
 					
@@ -166,7 +175,7 @@ public class Lab1Main {
 							System.out.println(arrFlt[0+i]);							
 					}
 					else if(((arrFlt.length)-1) < arrFlt[0]){
-						System.out.println("Missing values in file – did not process file");
+						System.out.println("Missing values in file â€“ did not process file");
 					}
 
 					else if(((arrFlt.length)-1) > arrFlt[0]){
