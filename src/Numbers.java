@@ -32,7 +32,10 @@ public class Numbers {
 		Arrays.fill(numbersFloat, 0.0f);
 	}
 
-
+	public Float[] getNumbersFloat() {
+		return numbersFloat;
+	}
+	
 	public void initValuesInArray() {
 		/// write code here to intialize the values in the array
 		Scanner input = new Scanner(System.in);
